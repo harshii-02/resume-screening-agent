@@ -8,3 +8,4 @@ sentence-transformers>=3.0.0,<6
 numpy>=1.26.0,<3
 tqdm>=4.66.0,<5
 streamlit>=1.32.0,<2
+torchvision>=0.17.0

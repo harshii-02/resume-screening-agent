@@ -41,6 +41,8 @@ Without a key, embeddings + heuristics still produce a complete ranked shortlist
 streamlit run app.py
 ```
 
+Opens at `http://localhost:8501`. **Reviewers do not need the UI** — `python main.py` alone is enough to score the submission.
+
 ---
 
 ## Agent loop (Input → Think → Act → Output)

@@ -1,0 +1,7 @@
+[server]
+# Avoid Streamlit recursively inspecting torch/transformers packages
+# (noise like ModuleNotFoundError: torchvision during file watching)
+fileWatcherType = "none"
+
+[browser]
+gatherUsageStats = false

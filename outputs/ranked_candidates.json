@@ -28,14 +28,14 @@
   "pairwise_explanations": [
     "Priya Nair ranks above Alice Chen primarily due to overall score +0.9; embedding similarity +1.8.",
     "Alice Chen ranks above Chris Patel primarily due to overall score +2.2; embedding similarity +4.4.",
-    "Chris Patel ranks above Hassan Ali primarily due to overall score +1.6; embedding similarity -4.8; education fit +40.0.",
-    "Hassan Ali ranks above Rahul Sharma primarily due to overall score +2.5; embedding similarity +13.0; education fit -40.0.",
-    "Rahul Sharma ranks above John Rivera primarily due to overall score +4.0; embedding similarity -8.3; skill match +16.7; education fit +40.0. Extra matched skills vs lower rank: machine learning.",
-    "John Rivera ranks above Maria Lopez primarily due to overall score +4.0; skill match +16.7. Extra matched skills vs lower rank: fastapi.",
-    "Maria Lopez ranks above Omar Haddad primarily due to overall score +1.7; embedding similarity +3.0; skill match +16.7; education fit -40.0. Extra matched skills vs lower rank: python.",
+    "Chris Patel ranks above Hassan Ali primarily due to overall score +1.7; embedding similarity -4.6; education fit +40.0.",
+    "Hassan Ali ranks above Rahul Sharma primarily due to overall score +1.9; embedding similarity +11.7; education fit -40.0.",
+    "Rahul Sharma ranks above John Rivera primarily due to overall score +4.6; embedding similarity -7.2; skill match +16.7; education fit +40.0. Extra matched skills vs lower rank: machine learning.",
+    "John Rivera ranks above Maria Lopez primarily due to overall score +3.9; embedding similarity -0.6; skill match +16.7. Extra matched skills vs lower rank: fastapi.",
+    "Maria Lopez ranks above Omar Haddad primarily due to overall score +1.7; embedding similarity +3.2; skill match +16.7; education fit -40.0. Extra matched skills vs lower rank: python.",
     "Omar Haddad ranks above Alex Nguyen primarily due to overall score +0.5; embedding similarity +1.4; skill match -16.7; education fit +40.0.",
-    "Alex Nguyen ranks above Nina Petrokova primarily due to overall score +1.3; embedding similarity +10.5; education fit -40.0.",
-    "Nina Petrokova ranks above Sofia Rossi primarily due to overall score +7.7; embedding similarity +7.5; education fit +40.0. Extra matched skills vs lower rank: docker.",
+    "Alex Nguyen ranks above Nina Petrokova primarily due to overall score +1.4; embedding similarity +10.7; education fit -40.0.",
+    "Nina Petrokova ranks above Sofia Rossi primarily due to overall score +7.6; embedding similarity +7.3; education fit +40.0. Extra matched skills vs lower rank: docker.",
     "Sofia Rossi ranks above David Kim primarily due to embedding similarity -14.4; skill match +16.7; experience fit +50.0; education fit -40.0. Extra matched skills vs lower rank: machine learning.",
     "David Kim ranks above Emily Brooks primarily due to overall score +1.2; embedding similarity -0.5; experience fit -16.7; education fit +40.0."
   ],
@@ -89,7 +89,7 @@
       ],
       "skill_gaps": [],
       "reason": "Priya Nair is a strong fit for the Python Developer role due to her extensive experience in required skills. Her additional skills in PostgreSQL, pandas, and Redis are a plus.",
-      "recruiter_summary": "Priya Nair has 4 years of experience in Python development with a strong educational background in Computer Science. She has a comprehensive skill set that aligns with the job requirements, making her a suitable candidate for the position. Her familiarity with Linux and REST API is an added advantage.",
+      "recruiter_summary": "Priya Nair has 4 years of experience in Python development with a strong educational background in Computer Science. She has a solid grasp of the required skills, including FastAPI, SQL, Docker, Git, and Machine Learning. Her additional skills make her a versatile candidate for the role.",
       "rank": 1,
       "why_above_next": "Priya Nair ranks above Alice Chen primarily due to overall score +0.9; embedding similarity +1.8."
     },
@@ -147,7 +147,7 @@
       ],
       "skill_gaps": [],
       "reason": "Alice Chen is a strong fit for the Python Developer role due to her extensive experience in required skills and additional expertise in relevant areas. Her background in computer science and 5 years of experience make her a highly qualified candidate.",
-      "recruiter_summary": "Alice Chen has a solid foundation in Python development with experience in FastAPI, SQL, and Docker. She also has a strong understanding of machine learning and additional skills in cloud platforms like AWS, and DevOps tools like CI/CD and Linux. Her education in computer science and 5 years of experience make her a competitive candidate. Overall, Alice is a well-rounded candidate with a strong technical skill set.",
+      "recruiter_summary": "Alice Chen has a solid foundation in Python development with experience in FastAPI, SQL, and Docker. She also has a strong understanding of machine learning and additional skills in cloud computing, DevOps, and Linux. Her education and years of experience make her a competitive candidate for the role. Overall, Alice is a well-rounded candidate with a strong technical skill set.",
       "rank": 2,
       "why_above_next": "Alice Chen ranks above Chris Patel primarily due to overall score +2.2; embedding similarity +4.4."
     },
@@ -205,20 +205,20 @@
         "Strong Python skills",
         "Experience with FastAPI",
         "Proficient in SQL and Docker",
-        "Machine learning expertise",
+        "Familiarity with machine learning frameworks",
         "Extensive experience with cloud and DevOps tools"
       ],
       "skill_gaps": [],
-      "reason": "Chris Patel is a highly skilled Python developer with 8 years of experience and a strong educational background, making him a great fit for the role. His extensive experience with relevant technologies and additional skills in areas like cloud computing and DevOps are a significant plus.",
-      "recruiter_summary": "Chris Patel is an exceptional candidate with a strong foundation in Python development, machine learning, and cloud computing. He has a Master's degree in Computer Science from the University of Toronto and 8 years of experience in the field. His skills in FastAPI, SQL, Docker, and Git are well-aligned with the job requirements. Overall, Chris is a highly qualified candidate who can make significant contributions to the team.",
+      "reason": "Chris Patel is a highly skilled Python developer with 8 years of experience and a strong educational background, making him a great fit for the role. His extensive experience with relevant technologies and frameworks earns him a high ranking.",
+      "recruiter_summary": "Chris Patel is an exceptional candidate with a strong foundation in Python development, machine learning, and cloud computing. He has a Master's degree in Computer Science from the University of Toronto and 8 years of industry experience. His skills in FastAPI, SQL, Docker, and Git are well-aligned with the job requirements. Overall, Chris is a highly qualified candidate who can make significant contributions to the team.",
       "rank": 3,
-      "why_above_next": "Chris Patel ranks above Hassan Ali primarily due to overall score +1.6; embedding similarity -4.8; education fit +40.0."
+      "why_above_next": "Chris Patel ranks above Hassan Ali primarily due to overall score +1.7; embedding similarity -4.6; education fit +40.0."
     },
     {
       "candidate": "Hassan Ali",
       "file": "hassan_ali.txt",
-      "score": 84.92,
-      "similarity": 81.84,
+      "score": 84.81,
+      "similarity": 81.61,
       "skills_score": 100.0,
       "experience_score": 100.0,
       "education_score": 40.0,
@@ -246,7 +246,7 @@
         "ci/cd"
       ],
       "education": [
-        "B.S. Software Engineering at FAST-NUCES"
+        "B.S. Software Engineering — FAST-NUCES"
       ],
       "projects": [
         "FastAPI booking platform",
@@ -259,19 +259,19 @@
         "Strong Python skills",
         "Experience with FastAPI",
         "Familiarity with SQL and Docker",
-        "Knowledge of Machine Learning"
+        "Machine Learning expertise"
       ],
       "skill_gaps": [],
-      "reason": "Hassan Ali is a strong fit for the Python Developer role due to his extensive experience with required skills, including Python, FastAPI, and machine learning. His additional skills in scikit-learn, REST API, and CI/CD are also a plus.",
-      "recruiter_summary": "Hassan Ali has 3.5 years of experience and a solid educational background in software engineering. He has a strong foundation in Python development, with experience in FastAPI, SQL, and Docker. His skills in machine learning and scikit-learn are also notable. Overall, Hassan is a well-rounded candidate with a high potential for success in this role.",
+      "reason": "Hassan Ali is a strong fit for the Python Developer role due to his extensive experience with required skills. His additional skills in scikit-learn, REST API, and CI/CD are a plus.",
+      "recruiter_summary": "Hassan Ali has 3.5 years of experience and a solid educational background in Software Engineering. He has a strong foundation in Python, FastAPI, and machine learning. His experience with Docker, Git, and SQL makes him a well-rounded candidate. Overall, Hassan is a highly qualified candidate for the Python Developer position.",
       "rank": 4,
-      "why_above_next": "Hassan Ali ranks above Rahul Sharma primarily due to overall score +2.5; embedding similarity +13.0; education fit -40.0."
+      "why_above_next": "Hassan Ali ranks above Rahul Sharma primarily due to overall score +1.9; embedding similarity +11.7; education fit -40.0."
     },
     {
       "candidate": "Rahul Sharma",
       "file": "rahul_sharma.txt",
-      "score": 82.41,
-      "similarity": 68.81,
+      "score": 82.96,
+      "similarity": 69.92,
       "skills_score": 100.0,
       "experience_score": 100.0,
       "education_score": 80.0,
@@ -313,13 +313,14 @@
         "Strong Python skills",
         "Experience with FastAPI",
         "Proficient in SQL and Docker",
-        "Machine Learning expertise"
+        "Familiarity with Machine Learning",
+        "Excellent educational background"
       ],
       "skill_gaps": [],
-      "reason": "Rahul Sharma is a strong fit for the Python Developer role due to his extensive experience in required skills. His education background in Data Science and Computer Science adds to his technical credibility.",
-      "recruiter_summary": "Rahul has 3 years of experience and a solid educational foundation, with skills that perfectly match the job requirements. He has a strong grasp of machine learning and data science concepts, making him a valuable asset to the team. His proficiency in Docker, Git, and FastAPI demonstrates his ability to work with modern technologies.",
+      "reason": "Rahul Sharma is a strong fit for the Python Developer role due to his comprehensive skill set, which perfectly matches the required skills. His educational background in Data Science and Computer Science adds to his technical credibility.",
+      "recruiter_summary": "Rahul has 3 years of experience and a solid foundation in Python, FastAPI, SQL, Docker, and Machine Learning. He also has a strong educational background, with a Master's degree from IIIT Bangalore and a Bachelor's degree from VTU. His skills in scikit-learn, tensorflow, pandas, and numpy are a plus. Overall, Rahul is a highly qualified candidate for the Python Developer position.",
       "rank": 5,
-      "why_above_next": "Rahul Sharma ranks above John Rivera primarily due to overall score +4.0; embedding similarity -8.3; skill match +16.7; education fit +40.0. Extra matched skills vs lower rank: machine learning."
+      "why_above_next": "Rahul Sharma ranks above John Rivera primarily due to overall score +4.6; embedding similarity -7.2; skill match +16.7; education fit +40.0. Extra matched skills vs lower rank: machine learning."
     },
     {
       "candidate": "John Rivera",
@@ -365,22 +366,22 @@
       "strengths": [
         "Strong Python skills",
         "Experience with FastAPI",
-        "Proficient in SQL and Docker",
-        "Familiarity with Git"
+        "Familiarity with SQL and Docker",
+        "Proficient in Git version control"
       ],
       "skill_gaps": [
         "Machine learning"
       ],
-      "reason": "John Rivera is a strong candidate for the Python Developer role with 4 years of experience and a solid foundation in required skills, but lacks experience in machine learning. His score of 78.4 indicates a good fit, but some additional training may be necessary.",
-      "recruiter_summary": "John has a solid educational background with a B.E. in Information Technology from the University of Texas. He has a strong technical skill set, including experience with Python, FastAPI, and Docker. With some additional training in machine learning, John could be a valuable asset to the team. His experience with other technologies like Django, JavaScript, and React is also a plus.",
+      "reason": "John Rivera is a strong candidate for the Python Developer role, with 4 years of experience and a solid foundation in required skills, but lacks experience in machine learning. His overall score of 78.4 indicates a good fit, but some additional training may be necessary.",
+      "recruiter_summary": "John has a solid educational background with a B.E. in Information Technology from the University of Texas. He has a strong technical skill set, with experience in multiple frameworks and technologies. However, he will need to develop his machine learning skills to be fully effective in this role. Overall, John is a promising candidate with potential for growth and development.",
       "rank": 6,
-      "why_above_next": "John Rivera ranks above Maria Lopez primarily due to overall score +4.0; skill match +16.7. Extra matched skills vs lower rank: fastapi."
+      "why_above_next": "John Rivera ranks above Maria Lopez primarily due to overall score +3.9; embedding similarity -0.6; skill match +16.7. Extra matched skills vs lower rank: fastapi."
     },
     {
       "candidate": "Maria Lopez",
       "file": "maria_lopez.txt",
-      "score": 74.42,
-      "similarity": 77.51,
+      "score": 74.51,
+      "similarity": 77.68,
       "skills_score": 66.67,
       "experience_score": 100.0,
       "education_score": 40.0,
@@ -424,16 +425,16 @@
         "Strong Python foundation",
         "Experience with containerization using Docker",
         "Familiarity with SQL and database management",
-        "Proficient in Git for version control"
+        "Proficient in Git version control"
       ],
       "skill_gaps": [
         "FastAPI framework",
         "Machine learning concepts"
       ],
-      "reason": "Maria Lopez is a strong candidate for the Python Developer role, with 6 years of experience and a solid foundation in Python, SQL, and Docker. However, she lacks experience with FastAPI and machine learning, which are required skills for the position.",
-      "recruiter_summary": "Maria has a B.S. in Software Engineering and a strong technical background, with experience in cloud platforms like AWS and container orchestration using Kubernetes. She also has experience with CI/CD pipelines and infrastructure as code using Terraform. With some additional training in FastAPI and machine learning, Maria could be a great fit for the role. Her diverse skill set and experience make her a promising candidate.",
+      "reason": "Maria Lopez is a strong candidate for the Python Developer role, with 6 years of experience and a solid foundation in Python, SQL, and Docker. However, she lacks experience with FastAPI and machine learning, which are key requirements for the position.",
+      "recruiter_summary": "Maria has a well-rounded technical background, with experience in cloud platforms like AWS and container orchestration using Kubernetes. She also has a strong understanding of DevOps practices, including CI/CD pipelines and infrastructure management using Terraform. With some additional training or experience in FastAPI and machine learning, Maria could be a great fit for the role.",
       "rank": 7,
-      "why_above_next": "Maria Lopez ranks above Omar Haddad primarily due to overall score +1.7; embedding similarity +3.0; skill match +16.7; education fit -40.0. Extra matched skills vs lower rank: python."
+      "why_above_next": "Maria Lopez ranks above Omar Haddad primarily due to overall score +1.7; embedding similarity +3.2; skill match +16.7; education fit -40.0. Extra matched skills vs lower rank: python."
     },
     {
       "candidate": "Omar Haddad",
@@ -488,8 +489,8 @@
         "No knowledge of FastAPI framework",
         "Missing skills in machine learning"
       ],
-      "reason": "Omar Haddad has a solid foundation in software development, but his skills do not align perfectly with the required skills for a Python Developer role, resulting in a moderate score of 72.77.",
-      "recruiter_summary": "Omar Haddad is a seasoned developer with 7 years of experience and a strong educational background in Computer Science. Although he has experience with SQL, Docker, and Git, his primary programming language is Java, which may require additional training to transition to Python. With some upskilling, Omar could be a good fit for the role.",
+      "reason": "Omar Haddad is a strong candidate with 7 years of experience, but his skills do not perfectly align with the required skills for the Python Developer role. He has a solid foundation in software development, but needs to acquire skills in Python, FastAPI, and machine learning.",
+      "recruiter_summary": "Omar Haddad has a solid educational background with a B.S. in Computer Science and 7 years of experience in software development. He has experience with Docker, Git, and SQL, which are relevant to the role. However, he lacks experience with Python, FastAPI, and machine learning, which are crucial skills for the position. With some training and upskilling, Omar could be a strong fit for the role.",
       "rank": 8,
       "why_above_next": "Omar Haddad ranks above Alex Nguyen primarily due to overall score +0.5; embedding similarity +1.4; skill match -16.7; education fit +40.0."
     },
@@ -545,16 +546,16 @@
         "FastAPI",
         "Machine Learning"
       ],
-      "reason": "Alex Nguyen is a strong candidate with 5 years of experience and a solid foundation in Python, SQL, and DevOps tools, but lacks experience in FastAPI and Machine Learning. The candidate's score of 72.25 indicates a good but not perfect fit for the role.",
-      "recruiter_summary": "Alex Nguyen has a strong technical background with a degree in Information Systems from Northeastern University. The candidate's experience with Docker, Git, and SQL aligns well with the job requirements. However, additional training or experience in FastAPI and Machine Learning would be necessary for the candidate to excel in this role. Overall, Alex is a promising candidate with potential for growth and development.",
+      "reason": "Alex Nguyen is a strong candidate with 5 years of experience and a solid foundation in Python, SQL, and DevOps tools, but lacks experience in FastAPI and machine learning. The candidate's score of 72.25 indicates a good fit for the role, but may require additional training or support in certain areas.",
+      "recruiter_summary": "Alex Nguyen is a skilled developer with a strong background in DevOps and experience working with Python, SQL, and Docker. With a degree in Information Systems from Northeastern University, Alex has a solid educational foundation to support their technical skills. However, additional training in FastAPI and machine learning may be necessary to ensure success in this role.",
       "rank": 9,
-      "why_above_next": "Alex Nguyen ranks above Nina Petrokova primarily due to overall score +1.3; embedding similarity +10.5; education fit -40.0."
+      "why_above_next": "Alex Nguyen ranks above Nina Petrokova primarily due to overall score +1.4; embedding similarity +10.7; education fit -40.0."
     },
     {
       "candidate": "Nina Petrokova",
       "file": "nina_petrokova.txt",
-      "score": 70.97,
-      "similarity": 62.61,
+      "score": 70.88,
+      "similarity": 62.43,
       "skills_score": 66.67,
       "experience_score": 100.0,
       "education_score": 80.0,
@@ -582,7 +583,7 @@
         "aws"
       ],
       "education": [
-        "B.Sc. Computer Science at TU Berlin"
+        "B.Sc. Computer Science — TU Berlin"
       ],
       "projects": [
         "GraphQL BFF for storefront",
@@ -600,10 +601,10 @@
         "FastAPI",
         "Machine Learning"
       ],
-      "reason": "Nina Petrokova has a solid background in computer science and experience with relevant technologies, but lacks specific skills in FastAPI and machine learning. Her overall score of 70.97 indicates a good but not perfect fit for the role.",
-      "recruiter_summary": "Nina Petrokova is a strong candidate with 4 years of experience and a degree in Computer Science. She has a good foundation in programming languages, including Python, and experience with Docker, SQL, and Git. However, she may require additional training or experience in FastAPI and machine learning to excel in this role.",
+      "reason": "Nina Petrokova is a strong candidate with a solid educational background and relevant experience, but lacks specific skills in FastAPI and Machine Learning. Her overall score of 70.88 indicates a good fit for the role, but may require additional training.",
+      "recruiter_summary": "Nina has 4 years of experience and a degree in Computer Science from TU Berlin. She has a diverse skill set, including Python, SQL, Docker, and Git, which aligns with some of the required skills for the Python Developer role. However, she may need to develop skills in FastAPI and Machine Learning to be fully qualified.",
       "rank": 10,
-      "why_above_next": "Nina Petrokova ranks above Sofia Rossi primarily due to overall score +7.7; embedding similarity +7.5; education fit +40.0. Extra matched skills vs lower rank: docker."
+      "why_above_next": "Nina Petrokova ranks above Sofia Rossi primarily due to overall score +7.6; embedding similarity +7.3; education fit +40.0. Extra matched skills vs lower rank: docker."
     },
     {
       "candidate": "Sofia Rossi",
@@ -657,7 +658,7 @@
         "Docker"
       ],
       "reason": "Sofia Rossi is a strong candidate for the Python Developer role, with a solid foundation in Python and machine learning, but lacks experience with FastAPI and Docker. Her data science background and education are notable strengths.",
-      "recruiter_summary": "Sofia Rossi has 3 years of experience and a Master's degree in Data Science, with a strong skill set in Python, machine learning, and data analysis. She is a good fit for the role, but would require training or experience with FastAPI and Docker. Her background in data science and machine learning is a significant asset. Overall, Sofia is a promising candidate with potential for growth and development.",
+      "recruiter_summary": "Sofia has 3 years of experience and a Master's degree in Data Science, with a strong skill set in Python, machine learning, and data analysis. She is a good fit for the role, but would require training or experience with FastAPI and Docker. Her education and experience make her a competitive candidate. Overall, Sofia has the potential to be a valuable asset to the team.",
       "rank": 11,
       "why_above_next": "Sofia Rossi ranks above David Kim primarily due to embedding similarity -14.4; skill match +16.7; experience fit +50.0; education fit -40.0. Extra matched skills vs lower rank: machine learning."
     },
@@ -701,7 +702,7 @@
       ],
       "strengths": [
         "Python proficiency",
-        "SQL knowledge",
+        "SQL skills",
         "Version control with Git"
       ],
       "skill_gaps": [
@@ -709,8 +710,8 @@
         "Docker",
         "Machine learning"
       ],
-      "reason": "David Kim is a decent fit for the Python Developer role, but lacks experience with key technologies such as FastAPI and Docker. His score of 62.78 indicates a moderate level of alignment with the required skills.",
-      "recruiter_summary": "David Kim has a solid foundation in Python and SQL, with experience using Git for version control. However, he would need training or upskilling in areas like FastAPI, Docker, and machine learning to be a strong candidate. His background in computer science from the University of Washington is a plus. With some additional development, he could be a good fit for the role.",
+      "reason": "David Kim is a decent fit for the Python Developer role with 1.5 years of experience and a strong foundation in Python, SQL, and Git, but lacks experience in key areas like FastAPI, Docker, and machine learning. His score of 62.78 reflects this partial alignment with the required skills.",
+      "recruiter_summary": "David Kim has a solid educational background in Computer Science from the University of Washington and some relevant skills, but needs additional training or experience to fill the gaps in FastAPI, Docker, and machine learning. He could be a good candidate for further development. His web development skills in HTML, CSS, and JavaScript are a plus, but not directly relevant to the Python Developer role.",
       "rank": 12,
       "why_above_next": "David Kim ranks above Emily Brooks primarily due to overall score +1.2; embedding similarity -0.5; experience fit -16.7; education fit +40.0."
     },
@@ -756,15 +757,15 @@
         "Python proficiency",
         "SQL skills",
         "Git experience",
-        "Data analysis with pandas"
+        "Data analysis with Pandas"
       ],
       "skill_gaps": [
         "FastAPI",
         "Docker",
         "Machine learning"
       ],
-      "reason": "Emily Brooks is a decent fit for the Python Developer role with 2 years of experience and relevant skills like Python, SQL, and Git, but lacks experience in key areas like FastAPI, Docker, and machine learning. Her background in Business Analytics and skills in data analysis are notable strengths.",
-      "recruiter_summary": "Emily has a solid foundation in Python and data analysis, with experience in SQL and Git. However, she requires training in FastAPI, Docker, and machine learning to be a strong candidate. Her education in Business Analytics from CU Boulder is a plus. With some additional training, Emily could be a good fit for the role.",
+      "reason": "Emily Brooks is a good fit for the Python Developer role with 2 years of experience and relevant skills, but lacks specific required skills like FastAPI and machine learning. Her background in Business Analytics and experience with SQL and Git are notable strengths.",
+      "recruiter_summary": "Emily has a solid foundation in Python and data analysis, with experience in SQL and Git. She has a degree in Business Analytics from CU Boulder, which could be beneficial in understanding business needs. However, she needs to develop skills in FastAPI, Docker, and machine learning to be a strong candidate for the role.",
       "rank": 13,
       "why_above_next": "Lowest rank in this run."
     }
