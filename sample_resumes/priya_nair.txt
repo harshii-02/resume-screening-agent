@@ -1,0 +1,27 @@
+Priya Nair
+priya.nair@email.com | Hyderabad, India
+
+Summary
+Python backend developer specializing in FastAPI and data services, 4 years experience.
+
+Skills
+Python, FastAPI, SQL, PostgreSQL, Docker, Git, Machine Learning, Pandas, REST API, Linux, Redis
+
+Experience
+Python Developer — OrbitData (2021–Present)
+- Delivered FastAPI APIs for analytics products
+- Tuned PostgreSQL/SQL queries and caching with Redis
+- Integrated lightweight Machine Learning scoring endpoints
+
+Associate Engineer — PixelSoft (2020–2021)
+- Built Python ETL jobs and Git-based release scripts
+
+Education
+B.Tech Computer Science — JNTU
+
+Projects
+- Document Q&A prototype with Machine Learning features
+- Dockerized FastAPI starter kit
+
+Certifications
+PostgreSQL Associate

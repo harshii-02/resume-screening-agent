@@ -1,0 +1,30 @@
+Chris Patel
+chris.patel@email.com | Toronto, Canada
+
+Summary
+Senior Python engineer with production FastAPI and ML systems, 8 years experience.
+
+Skills
+Python, FastAPI, Flask, SQL, PostgreSQL, Docker, Kubernetes, Git, Machine Learning, PyTorch, Scikit-learn, AWS, Redis, Kafka, CI/CD, Linux, REST API, LangChain, LLM
+
+Experience
+Staff Software Engineer — VectorLabs (2021–Present)
+- Led FastAPI platform for Machine Learning inference at scale
+- Designed SQL/PostgreSQL schemas and Redis caching layers
+- Owned Docker/Kubernetes releases and GitHub Actions CI/CD on AWS
+- Prototyped LLM tools with LangChain for internal knowledge search
+
+Senior Python Developer — FinEdge (2017–2021)
+- Built trading APIs and Kafka consumers
+- Mentored engineers on testing and observability
+
+Education
+M.S. Computer Science — University of Toronto
+B.S. Computer Science — McGill University
+
+Projects
+- Streaming feature pipeline with Kafka + Redis
+- LLM-assisted ticket triage service
+
+Certifications
+AWS Machine Learning Specialty

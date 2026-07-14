@@ -1,0 +1,26 @@
+David Kim
+david.kim@email.com | Seattle, WA
+
+Summary
+Junior Python developer with 1.5 years of experience.
+
+Skills
+Python, Flask, SQL, Git, HTML, CSS, JavaScript
+
+Experience
+Junior Software Developer — SoftWave (2023–Present)
+- Maintained Flask services and wrote SQL queries
+- Participated in Git branching and code reviews
+
+Intern — CampusOps (2022–2023)
+- Built internal scripts in Python
+
+Education
+B.S. Computer Science — University of Washington
+
+Projects
+- Todo REST service in Flask
+- SQL practice dashboards
+
+Certifications
+None

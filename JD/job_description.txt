@@ -1,0 +1,31 @@
+Python Developer
+
+Job Title: Python Developer
+
+Requirements
+
+Python
+FastAPI
+SQL
+Docker
+Git
+Machine Learning
+
+Preferred
+PostgreSQL
+AWS
+Redis
+Kafka
+CI/CD
+
+Qualifications
+- Bachelor's degree in Computer Science or related field
+- 3+ years of experience building backend services
+- Strong understanding of REST APIs and cloud basics
+- Ability to collaborate with data/ML teams
+
+Responsibilities
+- Design and develop FastAPI microservices
+- Write clean, tested Python code
+- Work with SQL databases and containerized deployments
+- Support ML feature pipelines where needed

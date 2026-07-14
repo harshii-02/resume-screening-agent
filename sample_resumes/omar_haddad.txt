@@ -1,0 +1,27 @@
+Omar Haddad
+omar.haddad@email.com | Dubai, UAE
+
+Summary
+Java-first backend engineer exploring Python, 7 years experience.
+
+Skills
+Java, Spring, SQL, PostgreSQL, Kafka, Docker, Git, REST API, Microservices, Linux, AWS
+
+Experience
+Lead Backend Engineer — GulfTrade (2019–Present)
+- Designed Java/Spring microservices with Kafka
+- Introduced Docker packaging and SQL schema governance
+- Mentored team on REST API design
+
+Software Engineer — MetroBank (2016–2019)
+- Built payment services and PostgreSQL stores
+
+Education
+B.S. Computer Science — American University of Sharjah
+
+Projects
+- Event-sourced ledger with Kafka
+- Internal API gateway
+
+Certifications
+Oracle Certified Professional Java

@@ -1,0 +1,27 @@
+Alex Nguyen
+alex.nguyen@email.com | Boston, MA
+
+Summary
+Platform engineer with strong DevOps background and some Python, 5 years experience.
+
+Skills
+Docker, Kubernetes, AWS, Terraform, CI/CD, Git, Linux, Python, SQL, Jenkins, Ansible
+
+Experience
+DevOps Engineer — HarborScale (2020–Present)
+- Managed Docker/Kubernetes platforms on AWS
+- Automated CI/CD and wrote Python ops tooling
+- Supported SQL-backed observability stores
+
+SRE — Wireframe Inc (2018–2020)
+- On-call ownership and infrastructure as code
+
+Education
+B.S. Information Systems — Northeastern University
+
+Projects
+- Golden path CI/CD templates
+- Python auto-remediation bots
+
+Certifications
+CKA, AWS DevOps Engineer

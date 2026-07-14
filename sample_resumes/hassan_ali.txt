@@ -1,0 +1,27 @@
+Hassan Ali
+hassan.ali@email.com | Lahore, Pakistan
+
+Summary
+Backend Python developer with FastAPI/Docker focus, 3.5 years experience.
+
+Skills
+Python, FastAPI, SQL, MySQL, Docker, Git, Machine Learning, Scikit-learn, REST API, Linux, CI/CD
+
+Experience
+Backend Developer — CodeCrafters (2021–Present)
+- Built customer FastAPI services backed by SQL/MySQL
+- Added Machine Learning suggestions for search ranking
+- Dockerized apps and maintained Git/CI pipelines
+
+Intern — StartLab (2020–2021)
+- Python scripting and basic SQL reporting
+
+Education
+B.S. Software Engineering — FAST-NUCES
+
+Projects
+- FastAPI booking platform
+- Scikit-learn churn prototype
+
+Certifications
+Docker Essentials

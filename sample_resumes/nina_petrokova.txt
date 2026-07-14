@@ -1,0 +1,27 @@
+Nina Petrokova
+nina.petrokova@email.com | Berlin, Germany
+
+Summary
+Full-stack engineer with React frontends and Node backends, some Python, 4 years.
+
+Skills
+JavaScript, TypeScript, Node.js, React, GraphQL, Git, Docker, SQL, Python, AWS
+
+Experience
+Full Stack Engineer — NordApps (2021–Present)
+- Delivered React + Node.js products
+- Used Docker for service isolation
+- Occasional Python scripts for data cleanup and SQL exports
+
+Frontend Developer — BrightUI (2020–2021)
+- Built TypeScript React apps
+
+Education
+B.Sc. Computer Science — TU Berlin
+
+Projects
+- GraphQL BFF for storefront
+- Small FastAPI experiment (personal)
+
+Certifications
+None

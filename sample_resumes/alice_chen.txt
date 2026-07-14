@@ -1,0 +1,28 @@
+Alice Chen
+alice.chen@email.com | LinkedIn | San Francisco, CA
+
+Summary
+Backend engineer with 5 years of experience building Python APIs and ML-assisted services.
+
+Skills
+Python, FastAPI, Flask, SQL, PostgreSQL, Docker, Git, Machine Learning, Scikit-learn, Pandas, AWS, Redis, CI/CD, Linux, REST API
+
+Experience
+Senior Python Developer — NovaPay (2022–Present)
+- Built FastAPI microservices handling 20M+ monthly requests
+- Containerized services with Docker and automated CI/CD
+- Partnered with data scientists on Machine Learning scoring APIs
+
+Python Engineer — DataNest (2019–2022)
+- Developed SQL-backed reporting services
+- Mentored juniors on Git workflows and code review
+
+Education
+B.S. Computer Science — University of Washington
+
+Projects
+- Fraud scoring API using Scikit-learn + FastAPI
+- Dockerized document ingestion pipeline
+
+Certifications
+AWS Cloud Practitioner

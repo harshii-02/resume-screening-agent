@@ -1,0 +1,26 @@
+John Rivera
+john.rivera@email.com | Austin, TX
+
+Summary
+Full-stack leaning backend developer with 4 years of Python experience.
+
+Skills
+Python, FastAPI, Django, SQL, MySQL, Docker, Git, REST API, JavaScript, React, Linux
+
+Experience
+Software Engineer — BlueStack Labs (2021–Present)
+- Implemented FastAPI endpoints for partner integrations
+- Wrote SQL migrations and optimized slow reports
+- Set up Docker Compose for local developer environments
+
+Junior Developer — HubPath (2020–2021)
+- Maintained Django admin tools and Git-based release process
+
+Education
+B.E. Information Technology — University of Texas
+
+Projects
+- Inventory REST API with FastAPI and MySQL
+
+Certifications
+None

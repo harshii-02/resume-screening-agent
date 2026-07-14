@@ -1,0 +1,28 @@
+Rahul Sharma
+rahul.sharma@email.com | Bengaluru, India
+
+Summary
+ML-focused Python engineer with 3 years of experience.
+
+Skills
+Python, Machine Learning, Scikit-learn, TensorFlow, Pandas, NumPy, SQL, Git, FastAPI, Docker, NLP
+
+Experience
+ML Engineer — InsightAI (2022–Present)
+- Deployed Machine Learning models behind FastAPI
+- Built feature stores querying SQL warehouses
+- Packaged inference jobs with Docker
+
+Data Analyst — QuantVista (2021–2022)
+- Automated analytics in Python and SQL
+
+Education
+M.Tech Data Science — IIIT Bangalore
+B.Tech Computer Science — VTU
+
+Projects
+- Resume classifier with NLP and Scikit-learn
+- Real-time inference service on FastAPI
+
+Certifications
+TensorFlow Developer Certificate

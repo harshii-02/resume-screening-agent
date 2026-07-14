@@ -1,0 +1,27 @@
+Maria Lopez
+maria.lopez@email.com | Chicago, IL
+
+Summary
+Cloud-native backend engineer, 6 years of experience.
+
+Skills
+Python, Flask, SQL, PostgreSQL, Docker, Kubernetes, AWS, Git, CI/CD, Terraform, Redis, Kafka, Linux
+
+Experience
+Senior Backend Engineer — CloudOrbit (2020–Present)
+- Designed event-driven Python services with Kafka and Redis
+- Productionized Docker/Kubernetes deployments on AWS
+- Led CI/CD improvements cutting release time by 40%
+
+Software Engineer — Streetline Systems (2018–2020)
+- Built SQL reporting backends in Python/Flask
+
+Education
+B.S. Software Engineering — University of Illinois
+
+Projects
+- Kafka consumer mesh for order events
+- Infrastructure as code with Terraform on AWS
+
+Certifications
+AWS Solutions Architect Associate

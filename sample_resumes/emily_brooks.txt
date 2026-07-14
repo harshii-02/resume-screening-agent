@@ -1,0 +1,26 @@
+Emily Brooks
+emily.brooks@email.com | Denver, CO
+
+Summary
+Python automation engineer with solid scripting experience, 2 years.
+
+Skills
+Python, Git, SQL, Excel, Pandas, REST API, Linux
+
+Experience
+Automation Engineer — RetailFlow (2023–Present)
+- Built Python scripts integrating REST APIs
+- Generated SQL extracts for finance operations
+
+Support Analyst — RetailFlow (2022–2023)
+- Used Excel/SQL for ticket analytics
+
+Education
+B.A. Business Analytics — CU Boulder
+
+Projects
+- API sync bot in Python
+- Pandas report generator
+
+Certifications
+None

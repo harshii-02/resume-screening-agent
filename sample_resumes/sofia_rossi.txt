@@ -1,0 +1,27 @@
+Sofia Rossi
+sofia.rossi@email.com | Milan, Italy / Remote
+
+Summary
+Data scientist transitioning to ML engineering roles, 3 years experience.
+
+Skills
+Python, Machine Learning, Deep Learning, PyTorch, Scikit-learn, Pandas, NumPy, SQL, Git, NLP, Jupyter
+
+Experience
+Data Scientist — MediPredict (2022–Present)
+- Trained Machine Learning models for triage ranking
+- Collaborated with engineers on SQL feature extracts
+- Prototyped NLP classification pipelines
+
+Research Assistant — Politecnico di Milano (2021–2022)
+- Published experiments in Deep Learning for imaging
+
+Education
+M.S. Data Science — Politecnico di Milano
+
+Projects
+- PyTorch recommender demo
+- SQL feature notebook pack
+
+Certifications
+Deep Learning Specialization
