@@ -39,16 +39,28 @@ def extract_text(path: Path) -> str:
     raise ValueError(f"Unsupported file type: {suffix}")
 
 
-def list_resume_files(resume_dir: Path) -> list[Path]:
-    if not resume_dir.exists():
-        raise FileNotFoundError(f"Resume directory not found: {resume_dir}")
+def list_resume_files(resume_path: Path) -> list[Path]:
+    """Accept either a single resume file or a folder of resumes."""
+    if not resume_path.exists():
+        raise FileNotFoundError(f"Resume path not found: {resume_path}")
+
+    if resume_path.is_file():
+        if resume_path.suffix.lower() not in SUPPORTED_EXTENSIONS:
+            raise ValueError(
+                f"Unsupported resume type: {resume_path.suffix}. Use PDF, DOCX, or TXT."
+            )
+        return [resume_path]
+
+    if not resume_path.is_dir():
+        raise ValueError(f"Resume path must be a file or folder: {resume_path}")
+
     files = [
         p
-        for p in sorted(resume_dir.iterdir())
+        for p in sorted(resume_path.iterdir())
         if p.is_file() and p.suffix.lower() in SUPPORTED_EXTENSIONS
     ]
     if not files:
-        raise FileNotFoundError(f"No PDF/DOCX/TXT resumes found in {resume_dir}")
+        raise FileNotFoundError(f"No PDF/DOCX/TXT resumes found in {resume_path}")
     return files
 
 

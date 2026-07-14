@@ -26,7 +26,12 @@ def build_arg_parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(
         description="Screen resumes against a job description and rank candidates."
     )
-    parser.add_argument("--resumes", type=Path, default=RESUME_DIR, help="Folder of PDF/DOCX/TXT resumes")
+    parser.add_argument(
+        "--resumes",
+        type=Path,
+        default=RESUME_DIR,
+        help="Folder of PDF/DOCX/TXT resumes, or a single resume file",
+    )
     parser.add_argument("--jd", type=Path, default=JD_PATH, help="Path to job description file")
     parser.add_argument("--output", type=Path, default=OUTPUT_DIR, help="Output directory")
     parser.add_argument(
@@ -38,10 +43,10 @@ def build_arg_parser() -> argparse.ArgumentParser:
     return parser
 
 
-def run(resume_dir: Path, jd_path: Path, output_dir: Path, limit: int = 0) -> None:
+def run(resume_path: Path, jd_path: Path, output_dir: Path, limit: int = 0) -> None:
     print("=== Resume Screening Agent ===")
     print(f"JD:      {jd_path}")
-    print(f"Resumes: {resume_dir}")
+    print(f"Resumes: {resume_path}")
     print(f"Output:  {output_dir}")
     print(
         "Weights: "
@@ -60,7 +65,7 @@ def run(resume_dir: Path, jd_path: Path, output_dir: Path, limit: int = 0) -> No
     print(f"\nRole: {jd.get('title')}")
     print(f"Required skills ({len(jd.get('required_skills', []))}): {', '.join(jd.get('required_skills', [])[:12])}")
 
-    files = list_resume_files(resume_dir)
+    files = list_resume_files(resume_path)
     if limit > 0:
         files = files[:limit]
     print(f"Screening {len(files)} resume(s)...\n")
