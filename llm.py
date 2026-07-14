@@ -6,7 +6,12 @@ import json
 import re
 from typing import Any
 
-from config import OPENAI_API_KEY, OPENAI_MODEL
+from config import (
+    GROQ_API_KEY,
+    OPENAI_API_KEY,
+    OPENAI_MODEL,
+    resolve_llm_provider,
+)
 from utils import canonicalize_skills, extract_years_of_experience, guess_candidate_name
 
 COMMON_SKILLS = [
@@ -185,24 +190,36 @@ def _education_keywords(text: str) -> list[str]:
     return keywords
 
 
-def _openai_client():
-    if not OPENAI_API_KEY:
-        return None
+def llm_status() -> str:
+    provider, model = resolve_llm_provider()
+    if provider is None:
+        return "disabled (heuristic fallback); set GROQ_API_KEY or OPENAI_API_KEY"
+    return f"{provider} / {model}"
+
+
+def _llm_client():
+    provider, model = resolve_llm_provider()
+    if provider is None:
+        return None, ""
     try:
         from openai import OpenAI
 
-        return OpenAI(api_key=OPENAI_API_KEY)
+        if provider == "groq":
+            client = OpenAI(api_key=GROQ_API_KEY, base_url="https://api.groq.com/openai/v1")
+            return client, model
+        client = OpenAI(api_key=OPENAI_API_KEY)
+        return client, model or OPENAI_MODEL
     except Exception:
-        return None
+        return None, ""
 
 
 def _chat_json(system: str, user: str) -> dict[str, Any] | None:
-    client = _openai_client()
+    client, model = _llm_client()
     if client is None:
         return None
     try:
         response = client.chat.completions.create(
-            model=OPENAI_MODEL,
+            model=model,
             temperature=0.1,
             response_format={"type": "json_object"},
             messages=[
@@ -215,6 +232,30 @@ def _chat_json(system: str, user: str) -> dict[str, Any] | None:
     except Exception as exc:  # noqa: BLE001 — fall back gracefully
         print(f"[warn] LLM call failed ({exc}); using heuristic extraction.")
         return None
+
+
+def explain_rank_difference(higher: dict[str, Any], lower: dict[str, Any]) -> str:
+    """Deterministic explanation of why candidate A ranks above candidate B."""
+    gaps = []
+    for key, label in [
+        ("score", "overall score"),
+        ("similarity", "embedding similarity"),
+        ("skills_score", "skill match"),
+        ("experience_score", "experience fit"),
+        ("education_score", "education fit"),
+    ]:
+        delta = float(higher.get(key, 0)) - float(lower.get(key, 0))
+        if abs(delta) >= 0.5:
+            gaps.append(f"{label} {delta:+.1f}")
+    matched_extra = sorted(set(higher.get("matched_skills", [])) - set(lower.get("matched_skills", [])))
+    detail = "; ".join(gaps[:4]) if gaps else "narrow margin on combined score"
+    skills_note = ""
+    if matched_extra:
+        skills_note = f" Extra matched skills vs lower rank: {', '.join(matched_extra[:4])}."
+    return (
+        f"{higher.get('candidate')} ranks above {lower.get('candidate')} primarily due to {detail}."
+        f"{skills_note}"
+    )
 
 
 def parse_resume(filename: str, text: str) -> dict[str, Any]:

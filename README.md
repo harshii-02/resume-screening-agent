@@ -1,70 +1,100 @@
 # Resume Screening Agent
 
-An end-to-end AI agent that screens a folder of resumes against a job description, ranks candidates with explainable scores, and exports **CSV + JSON** results.
+> **One job:** My agent takes a **job description + a folder (or file) of resumes** and produces a **ranked shortlist with scores, skill gaps, and reasons**.
+
+End-to-end AI agent for the Rooman / HireAI 24-hour challenge. Reviewers can run a **CLI** (primary) or optional **Streamlit UI**.
 
 It combines:
 
-- **File parsing** (PDF / DOCX / TXT)
-- **Structured extraction** (skills, experience, education, projects, certifications)
-- **Embeddings + cosine similarity** (`all-MiniLM-L6-v2`)
-- **Weighted ranking** (similarity, skill match, experience, education)
-- **Optional LLM** summaries, skill gaps, and recruiter reasons (OpenAI)
-
-Works **without an API key** using heuristic extraction; add `OPENAI_API_KEY` for richer LLM reasoning.
+- **File parsing** (PDF / DOCX / TXT) via PyMuPDF + python-docx  
+- **LLM structured extraction** (skills, experience, education, projects) — Groq or OpenAI  
+- **Heuristic fallback** if no API key (still fully runnable)  
+- **Embeddings + cosine similarity** (`all-MiniLM-L6-v2`)  
+- **Weighted ranking** + pairwise “why A above B” explanations  
+- **CSV + JSON** outputs  
 
 ---
 
-## Architecture
+## Quick start (Windows — foolproof)
 
+```powershell
+cd resume-screening-agent
+.\setup.ps1
+.\.venv\Scripts\Activate.ps1
+python main.py
 ```
-Job Description
-        │
-        ▼
-   Read JD text
-        │
-        ▼
- Read resume folder (PDF/DOCX/TXT)
-        │
-        ▼
-   Extract plain text
-        │
-        ▼
- LLM / heuristic extraction
- (skills, experience, education, projects)
-        │
-        ▼
- Generate embeddings (SentenceTransformers)
-        │
-        ▼
- Cosine similarity + skill/exp/edu scores
-        │
-        ▼
- Overall weighted score → ranking
-        │
-        ▼
- CSV + JSON output (+ recruiter summary)
+
+**Must activate `.venv`** before `python main.py` or you will get `ModuleNotFoundError: fitz`.
+
+### Optional LLM brain (recommended)
+
+1. Free key: [Groq Console](https://console.groq.com/keys) → put in `.env` as `GROQ_API_KEY=...`  
+2. Or OpenAI → `OPENAI_API_KEY=...`  
+3. Re-run `python main.py`
+
+Without a key, embeddings + heuristics still produce a complete ranked shortlist.
+
+### Optional web UI
+
+```powershell
+.\.venv\Scripts\Activate.ps1
+streamlit run app.py
 ```
 
 ---
 
-## Scoring formula
-
-| Component            | Weight | How it is computed                                      |
-| -------------------- | ------ | ------------------------------------------------------- |
-| Embedding similarity | 50%    | Cosine similarity between JD and resume embeddings      |
-| Skill match          | 25%    | `% of required JD skills found in candidate skills`     |
-| Experience           | 15%    | Candidate years vs JD minimum (capped at 100)           |
-| Education            | 10%    | Keyword overlap (e.g. Computer Science, Bachelor, …)    |
+## Agent loop (Input → Think → Act → Output)
 
 ```
-Final score (0–100) =
+User input: JD file + resume folder/file
+        │
+        ▼
+Tool: extract text (PDF/DOCX/TXT)
+        │
+        ▼
+Think: LLM system prompts extract skills/exp/education
+       (heuristic fallback if no API key)
+        │
+        ▼
+Think: SentenceTransformers embeddings + cosine similarity
+       + skill/experience/education component scores
+        │
+        ▼
+Act: rank candidates, write pairwise explanations
+        │
+        ▼
+Output: ranked_candidates.csv + ranked_candidates.json
+        (+ Streamlit table if using the UI)
+```
+
+Core orchestration lives in `agent.py` (shared by CLI and UI). System prompts live in `llm.py`.
+
+---
+
+## Scoring method (rubric deliverable)
+
+| Component            | Weight | Method |
+| -------------------- | ------ | ------ |
+| Embedding similarity | 50%    | Cosine similarity of MiniLM embeddings of structured resume profile vs JD |
+| Skill match          | 25%    | % of **required** JD skills present in extracted candidate skills |
+| Experience           | 15%    | Candidate years vs JD minimum (capped at 100) |
+| Education            | 10%    | Keyword overlap (CS, Bachelor, Master, …) |
+
+```
+Final score =
   0.50 × Similarity
 + 0.25 × Skill Match
 + 0.15 × Experience
 + 0.10 × Education
 ```
 
-Weights are configurable via environment variables.
+**Why this model mix**
+
+- **MiniLM (`all-MiniLM-L6-v2`)** — fast local NLP similarity; reproducible for reviewers; no embedding API quota.  
+- **Deterministic skill/exp/edu scores** — explainable and auditable (important for hiring).  
+- **LLM (Groq/OpenAI)** — better structured extraction + recruiter narrative; optional so the demo never blocks on billing.  
+
+Pairwise explanations answer: *why Candidate A ranked above Candidate B* using score-component deltas.
 
 ---
 
@@ -73,215 +103,116 @@ Weights are configurable via environment variables.
 ```
 resume-screening-agent/
 ├── README.md
+├── setup.ps1
 ├── requirements.txt
 ├── .env.example
-├── .gitignore
 ├── main.py              # CLI entrypoint
-├── config.py            # Paths, model, scoring weights
-├── utils.py             # Helpers (skills, I/O, name guess)
-├── extract.py           # PDF / DOCX / TXT extraction
-├── llm.py               # OpenAI + heuristic parsing/summaries
+├── app.py               # Streamlit UI (optional)
+├── agent.py             # Shared screening loop
+├── config.py
+├── extract.py           # PDF / DOCX / TXT tools
+├── llm.py               # System prompts + Groq/OpenAI + heuristics
 ├── ranking.py           # Embeddings + scoring
-├── JD/
-│   └── job_description.txt
+├── utils.py
+├── tests/test_scoring.py
+├── JD/job_description.txt
 ├── sample_resumes/      # 13 samples (TXT + DOCX + PDF)
-└── outputs/             # Sample ranked CSV/JSON committed for reviewers
+└── outputs/
     ├── ranked_candidates.csv
     └── ranked_candidates.json
 ```
 
 ---
 
-## Tech stack
+## Installation (manual)
 
-| Area        | Library / model                          |
-| ----------- | ---------------------------------------- |
-| Language    | Python 3.10+                             |
-| LLM (opt.)  | OpenAI (`gpt-4o-mini` by default)        |
-| Embeddings  | `sentence-transformers/all-MiniLM-L6-v2` |
-| PDF         | PyMuPDF                                  |
-| DOCX        | python-docx                              |
-| Ranking     | scikit-learn cosine similarity           |
-| Tabular I/O | pandas                                   |
-
----
-
-## Installation
-
-```bash
-# 1. Clone
-git clone <your-repo-url>
-cd resume-screening-agent
-
-# 2. Create virtualenv
+```powershell
 python -m venv .venv
-
-# Windows PowerShell
 .\.venv\Scripts\Activate.ps1
-
-# macOS / Linux
-source .venv/bin/activate
-
-# 3. Install dependencies
 pip install -r requirements.txt
+copy .env.example .env
+python tests/test_scoring.py
+python main.py
 ```
 
-First run downloads the SentenceTransformers model (~80MB).
+First run downloads the MiniLM model (~80MB).
 
----
+### Environment variables
 
-## Environment variables
-
-Copy the example file and edit:
-
-```bash
-copy .env.example .env          # Windows
-# cp .env.example .env          # macOS / Linux
-```
-
-| Variable            | Required | Default                                      | Description                          |
-| ------------------- | -------- | -------------------------------------------- | ------------------------------------ |
-| `OPENAI_API_KEY`    | No       | _(empty)_                                    | Enables LLM extraction & summaries   |
-| `OPENAI_MODEL`      | No       | `gpt-4o-mini`                                | Chat model name                      |
-| `RESUME_DIR`        | No       | `sample_resumes`                             | Resume folder                        |
-| `JD_PATH`           | No       | `JD/job_description.txt`                     | Job description file                 |
-| `OUTPUT_DIR`        | No       | `outputs`                                    | Where CSV/JSON are written           |
-| `EMBEDDING_MODEL`   | No       | `sentence-transformers/all-MiniLM-L6-v2`     | Local embedding model                |
-| `WEIGHT_SIMILARITY` | No       | `0.50`                                       | Score weight                         |
-| `WEIGHT_SKILLS`     | No       | `0.25`                                       | Score weight                         |
-| `WEIGHT_EXPERIENCE` | No       | `0.15`                                       | Score weight                         |
-| `WEIGHT_EDUCATION`  | No       | `0.10`                                       | Score weight                         |
-
-**API key setup**
-
-1. Create a key at [https://platform.openai.com/api-keys](https://platform.openai.com/api-keys)
-2. Put it in `.env` as `OPENAI_API_KEY=sk-...`
-3. Re-run the agent
-
-Without a key, the agent still ranks resumes using heuristics + embeddings.
+| Variable | Required | Default | Description |
+| -------- | -------- | ------- | ----------- |
+| `GROQ_API_KEY` | Optional | empty | Free LLM via Groq |
+| `OPENAI_API_KEY` | Optional | empty | OpenAI LLM |
+| `LLM_PROVIDER` | Optional | `auto` | `auto` / `groq` / `openai` |
+| `RESUME_DIR` | Optional | `sample_resumes` | Resume folder |
+| `JD_PATH` | Optional | `JD/job_description.txt` | JD file |
+| `OUTPUT_DIR` | Optional | `outputs` | Output folder |
+| `WEIGHT_*` | Optional | see scoring table | Tune formula |
 
 ---
 
 ## How to run
 
-```bash
-# Screen the bundled sample resumes against the sample JD
+```powershell
+# Sample demo (13 resumes)
 python main.py
 
-# Custom paths
-python main.py --resumes path/to/resumes --jd path/to/jd.txt --output outputs
+# Custom folder or single file
+python main.py --resumes path\to\resumes --jd path\to\jd.txt
+python main.py --resumes path\to\one_resume.pdf --jd JD\job_description.txt
 
-# Limit to first N files (handy for demos)
-python main.py --limit 5
+# UI
+streamlit run app.py
 ```
-
----
-
-## Sample input
-
-**Job description** (`JD/job_description.txt`):
-
-```text
-Python Developer
-
-Requirements
-Python
-FastAPI
-SQL
-Docker
-Git
-Machine Learning
-```
-
-**Resumes:** drop PDF / DOCX / TXT files into `sample_resumes/` (13 samples included — mostly TXT, plus `alice_chen.docx` and `john_rivera.pdf` to demonstrate all parsers).
 
 ---
 
 ## Sample output
 
-### Console
+| Rank | Candidate | Score |
+| ---- | --------- | ----- |
+| 1 | Alice Chen | ~90 |
+| 2 | Priya Nair | ~88 |
+| 3 | Chris Patel | ~88 |
+| … | … | … |
 
-```text
-=== Rankings ===
-# 1  Chris Patel                   score=94.2
-# 2  Alice Chen                    score=91.5
-# 3  Priya Nair                    score=88.0
-...
-```
+See committed files:
 
-### CSV (`outputs/ranked_candidates.csv`)
-
-| Rank | Candidate   | Score | Similarity | Skills | Experience | Reason |
-| ---- | ----------- | ----- | ---------- | ------ | ---------- | ------ |
-| 1    | Chris Patel | 94.2  | …          | …      | …          | …      |
-| 2    | Alice Chen  | 91.5  | …          | …      | …          | …      |
-
-### JSON (`outputs/ranked_candidates.json`)
-
-```json
-{
-  "job": {
-    "title": "Python Developer",
-    "required_skills": ["python", "fastapi", "sql", "docker", "git", "machine learning"]
-  },
-  "candidates": [
-    {
-      "rank": 1,
-      "candidate": "Chris Patel",
-      "score": 94.2,
-      "matched_skills": ["python", "fastapi", "sql", "docker", "git", "machine learning"],
-      "missing_skills": [],
-      "strengths": ["Python", "FastAPI", "Machine Learning"],
-      "skill_gaps": [],
-      "reason": "…",
-      "recruiter_summary": "…"
-    }
-  ]
-}
-```
+- `outputs/ranked_candidates.csv`
+- `outputs/ranked_candidates.json` (includes `pairwise_explanations`)
 
 ---
 
-## Features
+## Agent-specific deliverables checklist
 
-### Resume parsing
-- Formats: **PDF**, **DOCX**, **TXT**
-- Extracts: skills, experience, education, projects, certifications
-
-### Similarity
-- Local embeddings with `all-MiniLM-L6-v2`
-- Cosine similarity between resume and JD
-
-### Bonus outputs
-- Skill gap analysis (missing required skills)
-- Strengths list
-- Recruiter summary + explainable ranking reason
+- [x] Job description (`JD/job_description.txt`)  
+- [x] Folder of 10+ sample resumes (`sample_resumes/`)  
+- [x] Ranked CSV + JSON (`outputs/`)  
+- [x] Scoring method note (this README)  
 
 ---
 
-## Tradeoffs
+## Tradeoffs & limitations
 
-| Choice                         | Why                                                         | Tradeoff                                      |
-| ------------------------------ | ----------------------------------------------------------- | --------------------------------------------- |
-| Local MiniLM embeddings        | Free, fast, reproducible, no quota                          | Less semantic nuance than larger cloud models |
-| Heuristic fallback without LLM | Project runs offline / without paid keys                    | Weaker name/section parsing on messy resumes  |
-| Weighted score formula         | Transparent for reviewers; easy to tune                     | Weights are domain heuristics, not learned    |
-| Batch folder processing        | Matches “10+ resumes in one run” evaluation need            | No interactive UI in v1                       |
+| Choice | Why | Tradeoff / limit |
+| ------ | --- | ---------------- |
+| Local MiniLM embeddings | Free, fast, reproducible for reviewers | Less semantic depth than large cloud embedding models |
+| Weighted transparent score | Auditable hiring decisions; easy to defend in interview | Weights are heuristics, not learned from labeled hire data |
+| Optional LLM (Groq/OpenAI) | Demo never blocks without a paid key | Extraction quality drops for messy/scanned resumes without LLM |
+| No OCR | Keeps deps light | Image-only / scanned PDFs extract poorly |
+| Streamlit optional UI | Recruiter-friendly demo without rewriting core agent | CLI remains the authoritative path for automated review |
+| Batch screening (not chat Q&A) | Matches Resume Screening job | Not an interactive multi-turn chatbot |
 
----
+### What I’d improve with more time
 
-## Future improvements
-
-- Web UI for upload + live ranking table
-- Cross-encoder re-ranking for top-k candidates
-- Bias / fairness checks on names and demographics
-- Vector store for historical JD/resume search
-- Groq / local LLM backends for free inference
-- Unit tests + GitHub Actions CI
-- Larger PDF/DOCX sample packs and OCR for scanned resumes
+- Cross-encoder re-rank of top-k candidates  
+- OCR for scanned PDFs  
+- Bias checks on names/demographics  
+- Learned weights from recruiter feedback  
+- CI that runs `tests/test_scoring.py` + smoke `main.py --limit 2`  
 
 ---
 
 ## License
 
-MIT — use freely for demos, learning, and interviews.
+MIT

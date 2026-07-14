@@ -23,6 +23,21 @@
       "education": 0.1
     }
   },
+  "llm": "disabled (heuristic fallback); set GROQ_API_KEY or OPENAI_API_KEY",
+  "pairwise_explanations": [
+    "Alice Chen ranks above Priya Nair primarily due to overall score +1.4; embedding similarity +2.8.",
+    "Priya Nair ranks above Chris Patel primarily due to embedding similarity +0.8.",
+    "Chris Patel ranks above Rahul Sharma primarily due to overall score +3.5; embedding similarity +6.9.",
+    "Rahul Sharma ranks above Hassan Ali primarily due to overall score +1.6; embedding similarity -4.7; education fit +40.0.",
+    "Hassan Ali ranks above Omar Haddad primarily due to overall score +4.9; embedding similarity +1.2; skill match +33.3; education fit -40.0. Extra matched skills vs lower rank: fastapi, machine learning.",
+    "Omar Haddad ranks above John Rivera primarily due to embedding similarity +0.5; skill match -16.7; education fit +40.0.",
+    "John Rivera ranks above Maria Lopez primarily due to overall score +3.8; embedding similarity -0.7; skill match +16.7. Extra matched skills vs lower rank: fastapi.",
+    "Maria Lopez ranks above Alex Nguyen primarily due to overall score +3.1; embedding similarity +6.2.",
+    "Alex Nguyen ranks above David Kim primarily due to overall score +8.8; embedding similarity +2.3; skill match +16.7; experience fit +50.0. Extra matched skills vs lower rank: docker.",
+    "David Kim ranks above Nina Petrokova primarily due to overall score +2.7; embedding similarity +7.1; skill match -33.3; experience fit +50.0.",
+    "Nina Petrokova ranks above Sofia Rossi primarily due to embedding similarity +14.1; skill match +16.7; experience fit -100.0; education fit +40.0. Extra matched skills vs lower rank: docker, fastapi.",
+    "Sofia Rossi ranks above Emily Brooks primarily due to overall score +9.0; embedding similarity -20.3; skill match +16.7; experience fit +100.0. Extra matched skills vs lower rank: machine learning."
+  ],
   "candidates": [
     {
       "candidate": "Alice Chen",
@@ -80,7 +95,8 @@
       "skill_gaps": [],
       "reason": "Overall fit score 89.8/100. Matched 6 required skills.",
       "recruiter_summary": "Highly recommended. Strong in Python, Fastapi, Sql. Covers most required skills.",
-      "rank": 1
+      "rank": 1,
+      "why_above_next": "Alice Chen ranks above Priya Nair primarily due to overall score +1.4; embedding similarity +2.8."
     },
     {
       "candidate": "Priya Nair",
@@ -134,7 +150,8 @@
       "skill_gaps": [],
       "reason": "Overall fit score 88.4/100. Matched 6 required skills.",
       "recruiter_summary": "Highly recommended. Strong in Python, Fastapi, Sql. Covers most required skills.",
-      "rank": 2
+      "rank": 2,
+      "why_above_next": "Priya Nair ranks above Chris Patel primarily due to embedding similarity +0.8."
     },
     {
       "candidate": "Chris Patel",
@@ -197,7 +214,8 @@
       "skill_gaps": [],
       "reason": "Overall fit score 88.0/100. Matched 6 required skills.",
       "recruiter_summary": "Highly recommended. Strong in Python, Fastapi, Sql. Covers most required skills.",
-      "rank": 3
+      "rank": 3,
+      "why_above_next": "Chris Patel ranks above Rahul Sharma primarily due to overall score +3.5; embedding similarity +6.9."
     },
     {
       "candidate": "Rahul Sharma",
@@ -251,7 +269,8 @@
       "skill_gaps": [],
       "reason": "Overall fit score 84.5/100. Matched 6 required skills.",
       "recruiter_summary": "Highly recommended. Strong in Python, Fastapi, Sql. Covers most required skills.",
-      "rank": 4
+      "rank": 4,
+      "why_above_next": "Rahul Sharma ranks above Hassan Ali primarily due to overall score +1.6; embedding similarity -4.7; education fit +40.0."
     },
     {
       "candidate": "Hassan Ali",
@@ -305,7 +324,8 @@
       "skill_gaps": [],
       "reason": "Overall fit score 82.9/100. Matched 6 required skills.",
       "recruiter_summary": "Highly recommended. Strong in Python, Fastapi, Sql. Covers most required skills.",
-      "rank": 5
+      "rank": 5,
+      "why_above_next": "Hassan Ali ranks above Omar Haddad primarily due to overall score +4.9; embedding similarity +1.2; skill match +33.3; education fit -40.0. Extra matched skills vs lower rank: fastapi, machine learning."
     },
     {
       "candidate": "Omar Haddad",
@@ -361,7 +381,8 @@
       ],
       "reason": "Overall fit score 77.9/100. Matched 4 required skills; gaps: Fastapi, Machine Learning.",
       "recruiter_summary": "Recommended with caveats. Strong in Python, Sql, Docker. Needs exposure to Fastapi, Machine Learning.",
-      "rank": 6
+      "rank": 6,
+      "why_above_next": "Omar Haddad ranks above John Rivera primarily due to embedding similarity +0.5; skill match -16.7; education fit +40.0."
     },
     {
       "candidate": "John Rivera",
@@ -416,7 +437,8 @@
       ],
       "reason": "Overall fit score 77.8/100. Matched 5 required skills; gaps: Machine Learning.",
       "recruiter_summary": "Recommended with caveats. Strong in Python, Fastapi, Sql. Needs exposure to Machine Learning.",
-      "rank": 7
+      "rank": 7,
+      "why_above_next": "John Rivera ranks above Maria Lopez primarily due to overall score +3.8; embedding similarity -0.7; skill match +16.7. Extra matched skills vs lower rank: fastapi."
     },
     {
       "candidate": "Maria Lopez",
@@ -474,7 +496,8 @@
       ],
       "reason": "Overall fit score 74.0/100. Matched 4 required skills; gaps: Fastapi, Machine Learning.",
       "recruiter_summary": "Recommended with caveats. Strong in Python, Sql, Docker. Needs exposure to Fastapi, Machine Learning.",
-      "rank": 8
+      "rank": 8,
+      "why_above_next": "Maria Lopez ranks above Alex Nguyen primarily due to overall score +3.1; embedding similarity +6.2."
     },
     {
       "candidate": "Alex Nguyen",
@@ -530,7 +553,8 @@
       ],
       "reason": "Overall fit score 71.0/100. Matched 4 required skills; gaps: Fastapi, Machine Learning.",
       "recruiter_summary": "Recommended with caveats. Strong in Python, Sql, Docker. Needs exposure to Fastapi, Machine Learning.",
-      "rank": 9
+      "rank": 9,
+      "why_above_next": "Alex Nguyen ranks above David Kim primarily due to overall score +8.8; embedding similarity +2.3; skill match +16.7; experience fit +50.0. Extra matched skills vs lower rank: docker."
     },
     {
       "candidate": "David Kim",
@@ -580,7 +604,8 @@
       ],
       "reason": "Overall fit score 62.1/100. Matched 3 required skills; gaps: Fastapi, Docker, Machine Learning.",
       "recruiter_summary": "Partial fit. Strong in Python, Sql, Git. Needs exposure to Fastapi, Docker, Machine Learning.",
-      "rank": 10
+      "rank": 10,
+      "why_above_next": "David Kim ranks above Nina Petrokova primarily due to overall score +2.7; embedding similarity +7.1; skill match -33.3; experience fit +50.0."
     },
     {
       "candidate": "Nina Petrokova",
@@ -636,7 +661,8 @@
       ],
       "reason": "Overall fit score 59.4/100. Matched 5 required skills; gaps: Machine Learning.",
       "recruiter_summary": "Partial fit. Strong in Python, Fastapi, Sql. Needs exposure to Machine Learning.",
-      "rank": 11
+      "rank": 11,
+      "why_above_next": "Nina Petrokova ranks above Sofia Rossi primarily due to embedding similarity +14.1; skill match +16.7; experience fit -100.0; education fit +40.0. Extra matched skills vs lower rank: docker, fastapi."
     },
     {
       "candidate": "Sofia Rossi",
@@ -690,7 +716,8 @@
       ],
       "reason": "Overall fit score 59.2/100. Matched 4 required skills; gaps: Fastapi, Docker.",
       "recruiter_summary": "Partial fit. Strong in Python, Sql, Git. Needs exposure to Fastapi, Docker.",
-      "rank": 12
+      "rank": 12,
+      "why_above_next": "Sofia Rossi ranks above Emily Brooks primarily due to overall score +9.0; embedding similarity -20.3; skill match +16.7; experience fit +100.0. Extra matched skills vs lower rank: machine learning."
     },
     {
       "candidate": "Emily Brooks",
@@ -742,7 +769,8 @@
       ],
       "reason": "Overall fit score 50.1/100. Matched 3 required skills; gaps: Fastapi, Docker, Machine Learning.",
       "recruiter_summary": "Partial fit. Strong in Python, Sql, Git. Needs exposure to Fastapi, Docker, Machine Learning.",
-      "rank": 13
+      "rank": 13,
+      "why_above_next": "Lowest rank in this run."
     }
   ]
 }

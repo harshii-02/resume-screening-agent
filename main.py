@@ -6,9 +6,9 @@ import argparse
 import sys
 from pathlib import Path
 
+from agent import screen_resumes
 from config import (
     JD_PATH,
-    OPENAI_API_KEY,
     OUTPUT_DIR,
     RESUME_DIR,
     WEIGHT_EDUCATION,
@@ -16,10 +16,7 @@ from config import (
     WEIGHT_SIMILARITY,
     WEIGHT_SKILLS,
 )
-from extract import extract_text, list_resume_files, load_job_description
-from llm import generate_recruiter_summary, parse_job_description, parse_resume
-from ranking import EmbeddingEngine, score_candidate
-from utils import ensure_dir, write_csv, write_json
+from llm import llm_status
 
 
 def build_arg_parser() -> argparse.ArgumentParser:
@@ -55,114 +52,34 @@ def run(resume_path: Path, jd_path: Path, output_dir: Path, limit: int = 0) -> N
         f"experience={WEIGHT_EXPERIENCE:.0%}, "
         f"education={WEIGHT_EDUCATION:.0%}"
     )
-    if OPENAI_API_KEY:
-        print("LLM:     OpenAI enabled")
-    else:
-        print("LLM:     disabled (heuristic extraction); set OPENAI_API_KEY for richer summaries")
+    print(f"LLM:     {llm_status()}")
 
-    jd_text = load_job_description(jd_path)
-    jd = parse_job_description(jd_text)
-    print(f"\nRole: {jd.get('title')}")
-    print(f"Required skills ({len(jd.get('required_skills', []))}): {', '.join(jd.get('required_skills', [])[:12])}")
+    def _progress(idx: int, total: int, name: str) -> None:
+        print(f"[{idx}/{total}] {name}")
 
-    files = list_resume_files(resume_path)
-    if limit > 0:
-        files = files[:limit]
-    print(f"Screening {len(files)} resume(s)...\n")
-
-    engine = EmbeddingEngine()
-    results: list[dict] = []
-
-    for idx, path in enumerate(files, start=1):
-        print(f"[{idx}/{len(files)}] {path.name}")
-        text = extract_text(path)
-        if not text.strip():
-            print(f"  skip (empty text): {path.name}")
-            continue
-
-        candidate = parse_resume(path.name, text)
-        scores = score_candidate(text, jd_text, candidate, jd, engine)
-        narrative = generate_recruiter_summary(
-            candidate,
-            jd,
-            scores["matched_skills"],
-            scores["missing_skills"],
-            scores["score"],
-        )
-
-        results.append(
-            {
-                "candidate": candidate["name"],
-                "file": path.name,
-                "score": scores["score"],
-                "similarity": scores["similarity"],
-                "skills_score": scores["skills_score"],
-                "experience_score": scores["experience_score"],
-                "education_score": scores["education_score"],
-                "experience_years": candidate.get("experience_years", 0),
-                "matched_skills": scores["matched_skills"],
-                "missing_skills": scores["missing_skills"],
-                "skills": candidate.get("skills", []),
-                "education": candidate.get("education", []),
-                "projects": candidate.get("projects", []),
-                "certifications": candidate.get("certifications", []),
-                "strengths": narrative["strengths"],
-                "skill_gaps": narrative["skill_gaps"],
-                "reason": narrative["reason"],
-                "recruiter_summary": narrative["recruiter_summary"],
-            }
-        )
-
-    results.sort(key=lambda r: r["score"], reverse=True)
-    for rank, row in enumerate(results, start=1):
-        row["rank"] = rank
-
-    ensure_dir(output_dir)
-    csv_path = output_dir / "ranked_candidates.csv"
-    json_path = output_dir / "ranked_candidates.json"
-
-    csv_rows = [
-        {
-            "Rank": r["rank"],
-            "Candidate": r["candidate"],
-            "File": r["file"],
-            "Score": r["score"],
-            "Similarity": r["similarity"],
-            "Skills": r["skills_score"],
-            "Experience": r["experience_score"],
-            "Education": r["education_score"],
-            "Matched Skills": ", ".join(r["matched_skills"]),
-            "Missing Skills": ", ".join(r["missing_skills"]),
-            "Reason": r["reason"],
-            "Recruiter Summary": r["recruiter_summary"],
-        }
-        for r in results
-    ]
-    write_csv(csv_rows, csv_path)
-    write_json(
-        {
-            "job": {
-                "title": jd.get("title"),
-                "required_skills": jd.get("required_skills"),
-                "preferred_skills": jd.get("preferred_skills"),
-                "min_experience_years": jd.get("min_experience_years"),
-                "scoring_weights": {
-                    "similarity": WEIGHT_SIMILARITY,
-                    "skills": WEIGHT_SKILLS,
-                    "experience": WEIGHT_EXPERIENCE,
-                    "education": WEIGHT_EDUCATION,
-                },
-            },
-            "candidates": results,
-        },
-        json_path,
+    payload = screen_resumes(
+        resume_path,
+        jd_path,
+        output_dir=output_dir,
+        limit=limit,
+        progress_callback=_progress,
     )
 
+    print(f"\nRole: {payload['job'].get('title')}")
+    req = payload["job"].get("required_skills") or []
+    print(f"Required skills ({len(req)}): {', '.join(req[:12])}")
+
     print("\n=== Rankings ===")
-    for r in results:
+    for r in payload["candidates"]:
         print(f"#{r['rank']:>2}  {r['candidate']:<28}  score={r['score']:.1f}")
-    print(f"\nWrote {csv_path}")
-    print(f"Wrote {json_path}")
+
+    if payload.get("pairwise_explanations"):
+        print("\n=== Why this order ===")
+        for line in payload["pairwise_explanations"][:5]:
+            print(f"- {line}")
+
+    print(f"\nWrote {payload.get('csv_path')}")
+    print(f"Wrote {payload.get('json_path')}")
 
 
 def main(argv: list[str] | None = None) -> int:
