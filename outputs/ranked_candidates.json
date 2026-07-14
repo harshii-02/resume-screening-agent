@@ -1,0 +1,748 @@
+{
+  "job": {
+    "title": "Python Developer",
+    "required_skills": [
+      "python",
+      "fastapi",
+      "sql",
+      "docker",
+      "git",
+      "machine learning"
+    ],
+    "preferred_skills": [
+      "postgresql",
+      "aws",
+      "redis",
+      "kafka"
+    ],
+    "min_experience_years": 3.0,
+    "scoring_weights": {
+      "similarity": 0.5,
+      "skills": 0.25,
+      "experience": 0.15,
+      "education": 0.1
+    }
+  },
+  "candidates": [
+    {
+      "candidate": "Alice Chen",
+      "file": "alice_chen.docx",
+      "score": 89.77,
+      "similarity": 83.54,
+      "skills_score": 100.0,
+      "experience_score": 100.0,
+      "education_score": 80.0,
+      "experience_years": 5.0,
+      "matched_skills": [
+        "python",
+        "fastapi",
+        "sql",
+        "docker",
+        "git",
+        "machine learning"
+      ],
+      "missing_skills": [],
+      "skills": [
+        "python",
+        "sql",
+        "postgresql",
+        "redis",
+        "fastapi",
+        "flask",
+        "docker",
+        "aws",
+        "git",
+        "ci/cd",
+        "linux",
+        "rest api",
+        "machine learning",
+        "pandas",
+        "scikit-learn"
+      ],
+      "education": [
+        "B.S. Computer Science — University of Washington"
+      ],
+      "projects": [
+        "Fraud scoring API using Scikit-learn + FastAPI",
+        "Dockerized document ingestion pipeline"
+      ],
+      "certifications": [
+        "AWS Cloud Practitioner"
+      ],
+      "strengths": [
+        "Python",
+        "Fastapi",
+        "Sql",
+        "Docker",
+        "Git",
+        "Machine Learning"
+      ],
+      "skill_gaps": [],
+      "reason": "Overall fit score 89.8/100. Matched 6 required skills.",
+      "recruiter_summary": "Highly recommended. Strong in Python, Fastapi, Sql. Covers most required skills.",
+      "rank": 1
+    },
+    {
+      "candidate": "Priya Nair",
+      "file": "priya_nair.txt",
+      "score": 88.38,
+      "similarity": 80.76,
+      "skills_score": 100.0,
+      "experience_score": 100.0,
+      "education_score": 80.0,
+      "experience_years": 4.0,
+      "matched_skills": [
+        "python",
+        "fastapi",
+        "sql",
+        "docker",
+        "git",
+        "machine learning"
+      ],
+      "missing_skills": [],
+      "skills": [
+        "python",
+        "sql",
+        "postgresql",
+        "redis",
+        "fastapi",
+        "docker",
+        "git",
+        "linux",
+        "rest api",
+        "machine learning",
+        "pandas"
+      ],
+      "education": [
+        "B.Tech Computer Science — JNTU"
+      ],
+      "projects": [
+        "Document Q&A prototype with Machine Learning features",
+        "Dockerized FastAPI starter kit"
+      ],
+      "certifications": [
+        "PostgreSQL Associate"
+      ],
+      "strengths": [
+        "Python",
+        "Fastapi",
+        "Sql",
+        "Docker",
+        "Git",
+        "Machine Learning"
+      ],
+      "skill_gaps": [],
+      "reason": "Overall fit score 88.4/100. Matched 6 required skills.",
+      "recruiter_summary": "Highly recommended. Strong in Python, Fastapi, Sql. Covers most required skills.",
+      "rank": 2
+    },
+    {
+      "candidate": "Chris Patel",
+      "file": "chris_patel.txt",
+      "score": 87.98,
+      "similarity": 79.97,
+      "skills_score": 100.0,
+      "experience_score": 100.0,
+      "education_score": 80.0,
+      "experience_years": 8.0,
+      "matched_skills": [
+        "python",
+        "fastapi",
+        "sql",
+        "docker",
+        "git",
+        "machine learning"
+      ],
+      "missing_skills": [],
+      "skills": [
+        "python",
+        "sql",
+        "postgresql",
+        "redis",
+        "kafka",
+        "fastapi",
+        "flask",
+        "docker",
+        "kubernetes",
+        "aws",
+        "git",
+        "ci/cd",
+        "linux",
+        "rest api",
+        "machine learning",
+        "scikit-learn",
+        "pytorch",
+        "llm",
+        "langchain"
+      ],
+      "education": [
+        "M.S. Computer Science — University of Toronto",
+        "B.S. Computer Science — McGill University"
+      ],
+      "projects": [
+        "Streaming feature pipeline with Kafka + Redis",
+        "LLM-assisted ticket triage service"
+      ],
+      "certifications": [
+        "AWS Machine Learning Specialty"
+      ],
+      "strengths": [
+        "Python",
+        "Fastapi",
+        "Sql",
+        "Docker",
+        "Git",
+        "Machine Learning"
+      ],
+      "skill_gaps": [],
+      "reason": "Overall fit score 88.0/100. Matched 6 required skills.",
+      "recruiter_summary": "Highly recommended. Strong in Python, Fastapi, Sql. Covers most required skills.",
+      "rank": 3
+    },
+    {
+      "candidate": "Rahul Sharma",
+      "file": "rahul_sharma.txt",
+      "score": 84.52,
+      "similarity": 73.03,
+      "skills_score": 100.0,
+      "experience_score": 100.0,
+      "education_score": 80.0,
+      "experience_years": 3.0,
+      "matched_skills": [
+        "python",
+        "fastapi",
+        "sql",
+        "docker",
+        "git",
+        "machine learning"
+      ],
+      "missing_skills": [],
+      "skills": [
+        "python",
+        "sql",
+        "fastapi",
+        "docker",
+        "git",
+        "machine learning",
+        "pandas",
+        "numpy",
+        "scikit-learn",
+        "tensorflow"
+      ],
+      "education": [
+        "M.Tech Data Science — IIIT Bangalore",
+        "B.Tech Computer Science — VTU"
+      ],
+      "projects": [
+        "Resume classifier with NLP and Scikit-learn",
+        "Real-time inference service on FastAPI"
+      ],
+      "certifications": [
+        "TensorFlow Developer Certificate"
+      ],
+      "strengths": [
+        "Python",
+        "Fastapi",
+        "Sql",
+        "Docker",
+        "Git",
+        "Machine Learning"
+      ],
+      "skill_gaps": [],
+      "reason": "Overall fit score 84.5/100. Matched 6 required skills.",
+      "recruiter_summary": "Highly recommended. Strong in Python, Fastapi, Sql. Covers most required skills.",
+      "rank": 4
+    },
+    {
+      "candidate": "Hassan Ali",
+      "file": "hassan_ali.txt",
+      "score": 82.88,
+      "similarity": 77.75,
+      "skills_score": 100.0,
+      "experience_score": 100.0,
+      "education_score": 40.0,
+      "experience_years": 3.5,
+      "matched_skills": [
+        "python",
+        "fastapi",
+        "sql",
+        "docker",
+        "git",
+        "machine learning"
+      ],
+      "missing_skills": [],
+      "skills": [
+        "python",
+        "sql",
+        "mysql",
+        "fastapi",
+        "docker",
+        "git",
+        "ci/cd",
+        "linux",
+        "rest api",
+        "machine learning",
+        "scikit-learn"
+      ],
+      "education": [
+        "B.S. Software Engineering — FAST-NUCES"
+      ],
+      "projects": [
+        "FastAPI booking platform",
+        "Scikit-learn churn prototype"
+      ],
+      "certifications": [
+        "Docker Essentials"
+      ],
+      "strengths": [
+        "Python",
+        "Fastapi",
+        "Sql",
+        "Docker",
+        "Git",
+        "Machine Learning"
+      ],
+      "skill_gaps": [],
+      "reason": "Overall fit score 82.9/100. Matched 6 required skills.",
+      "recruiter_summary": "Highly recommended. Strong in Python, Fastapi, Sql. Covers most required skills.",
+      "rank": 5
+    },
+    {
+      "candidate": "Omar Haddad",
+      "file": "omar_haddad.txt",
+      "score": 77.94,
+      "similarity": 76.54,
+      "skills_score": 66.67,
+      "experience_score": 100.0,
+      "education_score": 80.0,
+      "experience_years": 7.0,
+      "matched_skills": [
+        "python",
+        "sql",
+        "docker",
+        "git"
+      ],
+      "missing_skills": [
+        "fastapi",
+        "machine learning"
+      ],
+      "skills": [
+        "python",
+        "java",
+        "sql",
+        "postgresql",
+        "kafka",
+        "spring",
+        "docker",
+        "aws",
+        "git",
+        "linux",
+        "rest api"
+      ],
+      "education": [
+        "B.S. Computer Science — American University of Sharjah"
+      ],
+      "projects": [
+        "Event-sourced ledger with Kafka",
+        "Internal API gateway"
+      ],
+      "certifications": [
+        "Oracle Certified Professional Java"
+      ],
+      "strengths": [
+        "Python",
+        "Sql",
+        "Docker",
+        "Git"
+      ],
+      "skill_gaps": [
+        "Fastapi",
+        "Machine Learning"
+      ],
+      "reason": "Overall fit score 77.9/100. Matched 4 required skills; gaps: Fastapi, Machine Learning.",
+      "recruiter_summary": "Recommended with caveats. Strong in Python, Sql, Docker. Needs exposure to Fastapi, Machine Learning.",
+      "rank": 6
+    },
+    {
+      "candidate": "John Rivera",
+      "file": "john_rivera.pdf",
+      "score": 77.85,
+      "similarity": 76.03,
+      "skills_score": 83.33,
+      "experience_score": 100.0,
+      "education_score": 40.0,
+      "experience_years": 4.0,
+      "matched_skills": [
+        "python",
+        "fastapi",
+        "sql",
+        "docker",
+        "git"
+      ],
+      "missing_skills": [
+        "machine learning"
+      ],
+      "skills": [
+        "python",
+        "javascript",
+        "sql",
+        "mysql",
+        "fastapi",
+        "django",
+        "react",
+        "docker",
+        "git",
+        "linux",
+        "rest api"
+      ],
+      "education": [
+        "B.E. Information Technology · University of Texas"
+      ],
+      "projects": [
+        "Inventory REST API with FastAPI and MySQL"
+      ],
+      "certifications": [
+        "None"
+      ],
+      "strengths": [
+        "Python",
+        "Fastapi",
+        "Sql",
+        "Docker",
+        "Git"
+      ],
+      "skill_gaps": [
+        "Machine Learning"
+      ],
+      "reason": "Overall fit score 77.8/100. Matched 5 required skills; gaps: Machine Learning.",
+      "recruiter_summary": "Recommended with caveats. Strong in Python, Fastapi, Sql. Needs exposure to Machine Learning.",
+      "rank": 7
+    },
+    {
+      "candidate": "Maria Lopez",
+      "file": "maria_lopez.txt",
+      "score": 74.03,
+      "similarity": 76.73,
+      "skills_score": 66.67,
+      "experience_score": 100.0,
+      "education_score": 40.0,
+      "experience_years": 6.0,
+      "matched_skills": [
+        "python",
+        "sql",
+        "docker",
+        "git"
+      ],
+      "missing_skills": [
+        "fastapi",
+        "machine learning"
+      ],
+      "skills": [
+        "python",
+        "sql",
+        "postgresql",
+        "redis",
+        "kafka",
+        "flask",
+        "docker",
+        "kubernetes",
+        "aws",
+        "git",
+        "ci/cd",
+        "linux",
+        "terraform"
+      ],
+      "education": [
+        "B.S. Software Engineering — University of Illinois"
+      ],
+      "projects": [
+        "Kafka consumer mesh for order events",
+        "Infrastructure as code with Terraform on AWS"
+      ],
+      "certifications": [
+        "AWS Solutions Architect Associate"
+      ],
+      "strengths": [
+        "Python",
+        "Sql",
+        "Docker",
+        "Git"
+      ],
+      "skill_gaps": [
+        "Fastapi",
+        "Machine Learning"
+      ],
+      "reason": "Overall fit score 74.0/100. Matched 4 required skills; gaps: Fastapi, Machine Learning.",
+      "recruiter_summary": "Recommended with caveats. Strong in Python, Sql, Docker. Needs exposure to Fastapi, Machine Learning.",
+      "rank": 8
+    },
+    {
+      "candidate": "Alex Nguyen",
+      "file": "alex_nguyen.txt",
+      "score": 70.95,
+      "similarity": 70.57,
+      "skills_score": 66.67,
+      "experience_score": 100.0,
+      "education_score": 40.0,
+      "experience_years": 5.0,
+      "matched_skills": [
+        "python",
+        "sql",
+        "docker",
+        "git"
+      ],
+      "missing_skills": [
+        "fastapi",
+        "machine learning"
+      ],
+      "skills": [
+        "python",
+        "sql",
+        "docker",
+        "kubernetes",
+        "aws",
+        "git",
+        "ci/cd",
+        "linux",
+        "terraform",
+        "ansible",
+        "jenkins"
+      ],
+      "education": [
+        "B.S. Information Systems — Northeastern University"
+      ],
+      "projects": [
+        "Golden path CI/CD templates",
+        "Python auto-remediation bots"
+      ],
+      "certifications": [
+        "CKA, AWS DevOps Engineer"
+      ],
+      "strengths": [
+        "Python",
+        "Sql",
+        "Docker",
+        "Git"
+      ],
+      "skill_gaps": [
+        "Fastapi",
+        "Machine Learning"
+      ],
+      "reason": "Overall fit score 71.0/100. Matched 4 required skills; gaps: Fastapi, Machine Learning.",
+      "recruiter_summary": "Recommended with caveats. Strong in Python, Sql, Docker. Needs exposure to Fastapi, Machine Learning.",
+      "rank": 9
+    },
+    {
+      "candidate": "David Kim",
+      "file": "david_kim.txt",
+      "score": 62.11,
+      "similarity": 68.22,
+      "skills_score": 50.0,
+      "experience_score": 50.0,
+      "education_score": 80.0,
+      "experience_years": 1.5,
+      "matched_skills": [
+        "python",
+        "sql",
+        "git"
+      ],
+      "missing_skills": [
+        "fastapi",
+        "docker",
+        "machine learning"
+      ],
+      "skills": [
+        "python",
+        "javascript",
+        "sql",
+        "flask",
+        "git"
+      ],
+      "education": [
+        "B.S. Computer Science — University of Washington"
+      ],
+      "projects": [
+        "Todo REST service in Flask",
+        "SQL practice dashboards"
+      ],
+      "certifications": [
+        "None"
+      ],
+      "strengths": [
+        "Python",
+        "Sql",
+        "Git"
+      ],
+      "skill_gaps": [
+        "Fastapi",
+        "Docker",
+        "Machine Learning"
+      ],
+      "reason": "Overall fit score 62.1/100. Matched 3 required skills; gaps: Fastapi, Docker, Machine Learning.",
+      "recruiter_summary": "Partial fit. Strong in Python, Sql, Git. Needs exposure to Fastapi, Docker, Machine Learning.",
+      "rank": 10
+    },
+    {
+      "candidate": "Nina Petrokova",
+      "file": "nina_petrokova.txt",
+      "score": 59.37,
+      "similarity": 61.07,
+      "skills_score": 83.33,
+      "experience_score": 0.0,
+      "education_score": 80.0,
+      "experience_years": 0.0,
+      "matched_skills": [
+        "python",
+        "fastapi",
+        "sql",
+        "docker",
+        "git"
+      ],
+      "missing_skills": [
+        "machine learning"
+      ],
+      "skills": [
+        "python",
+        "javascript",
+        "typescript",
+        "sql",
+        "fastapi",
+        "node.js",
+        "react",
+        "docker",
+        "aws",
+        "git",
+        "graphql"
+      ],
+      "education": [
+        "B.Sc. Computer Science — TU Berlin"
+      ],
+      "projects": [
+        "GraphQL BFF for storefront",
+        "Small FastAPI experiment (personal)"
+      ],
+      "certifications": [
+        "None"
+      ],
+      "strengths": [
+        "Python",
+        "Fastapi",
+        "Sql",
+        "Docker",
+        "Git"
+      ],
+      "skill_gaps": [
+        "Machine Learning"
+      ],
+      "reason": "Overall fit score 59.4/100. Matched 5 required skills; gaps: Machine Learning.",
+      "recruiter_summary": "Partial fit. Strong in Python, Fastapi, Sql. Needs exposure to Machine Learning.",
+      "rank": 11
+    },
+    {
+      "candidate": "Sofia Rossi",
+      "file": "sofia_rossi.txt",
+      "score": 59.17,
+      "similarity": 47.01,
+      "skills_score": 66.67,
+      "experience_score": 100.0,
+      "education_score": 40.0,
+      "experience_years": 3.0,
+      "matched_skills": [
+        "python",
+        "sql",
+        "git",
+        "machine learning"
+      ],
+      "missing_skills": [
+        "fastapi",
+        "docker"
+      ],
+      "skills": [
+        "python",
+        "sql",
+        "git",
+        "machine learning",
+        "deep learning",
+        "pandas",
+        "numpy",
+        "scikit-learn",
+        "pytorch"
+      ],
+      "education": [
+        "M.S. Data Science — Politecnico di Milano"
+      ],
+      "projects": [
+        "PyTorch recommender demo",
+        "SQL feature notebook pack"
+      ],
+      "certifications": [
+        "Deep Learning Specialization"
+      ],
+      "strengths": [
+        "Python",
+        "Sql",
+        "Git",
+        "Machine Learning"
+      ],
+      "skill_gaps": [
+        "Fastapi",
+        "Docker"
+      ],
+      "reason": "Overall fit score 59.2/100. Matched 4 required skills; gaps: Fastapi, Docker.",
+      "recruiter_summary": "Partial fit. Strong in Python, Sql, Git. Needs exposure to Fastapi, Docker.",
+      "rank": 12
+    },
+    {
+      "candidate": "Emily Brooks",
+      "file": "emily_brooks.txt",
+      "score": 50.15,
+      "similarity": 67.3,
+      "skills_score": 50.0,
+      "experience_score": 0.0,
+      "education_score": 40.0,
+      "experience_years": 0.0,
+      "matched_skills": [
+        "python",
+        "sql",
+        "git"
+      ],
+      "missing_skills": [
+        "fastapi",
+        "docker",
+        "machine learning"
+      ],
+      "skills": [
+        "python",
+        "sql",
+        "git",
+        "linux",
+        "rest api",
+        "pandas",
+        "excel"
+      ],
+      "education": [
+        "B.A. Business Analytics — CU Boulder"
+      ],
+      "projects": [
+        "API sync bot in Python",
+        "Pandas report generator"
+      ],
+      "certifications": [
+        "None"
+      ],
+      "strengths": [
+        "Python",
+        "Sql",
+        "Git"
+      ],
+      "skill_gaps": [
+        "Fastapi",
+        "Docker",
+        "Machine Learning"
+      ],
+      "reason": "Overall fit score 50.1/100. Matched 3 required skills; gaps: Fastapi, Docker, Machine Learning.",
+      "recruiter_summary": "Partial fit. Strong in Python, Sql, Git. Needs exposure to Fastapi, Docker, Machine Learning.",
+      "rank": 13
+    }
+  ]
+}

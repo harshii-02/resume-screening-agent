@@ -84,8 +84,8 @@ resume-screening-agent/
 ├── ranking.py           # Embeddings + scoring
 ├── JD/
 │   └── job_description.txt
-├── sample_resumes/      # 12 sample candidates
-└── outputs/             # Generated at runtime
+├── sample_resumes/      # 13 samples (TXT + DOCX + PDF)
+└── outputs/             # Sample ranked CSV/JSON committed for reviewers
     ├── ranked_candidates.csv
     └── ranked_candidates.json
 ```
@@ -193,7 +193,7 @@ Git
 Machine Learning
 ```
 
-**Resumes:** drop PDF / DOCX / TXT files into `sample_resumes/` (12 samples included).
+**Resumes:** drop PDF / DOCX / TXT files into `sample_resumes/` (13 samples included — mostly TXT, plus `alice_chen.docx` and `john_rivera.pdf` to demonstrate all parsers).
 
 ---
 
@@ -278,7 +278,7 @@ Machine Learning
 - Vector store for historical JD/resume search
 - Groq / local LLM backends for free inference
 - Unit tests + GitHub Actions CI
-- DOCX/PDF sample pack in addition to TXT
+- Larger PDF/DOCX sample packs and OCR for scanned resumes
 
 ---
 
